@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marb61a/VueFinServer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marb61a/VueFinServer/issues"
+  },
+  "homepage": "https://github.com/marb61a/VueFinServer#readme",
+  "dependencies": {
+    "eslint": "^5.4.0"
+  }
+}
