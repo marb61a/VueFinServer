@@ -50,5 +50,25 @@ module.exports = function (router) {
         }
       }
     ]
+
+    Transaction.aggregate(pipeline)
+      .exec()
+      .then(docs => res.status(200).json(docs))
+      .catch(err => res.status(500)
+        .json({
+          message: 'Error finding user transactions',
+          error: err
+        })
+      )
+  })
+
+  // Create a new transaction document
+  router.post('/transaction', function (req, res) {
+    let transaction = Transaction(req.body)
+
+    transaction.save(function (err, transaction) {
+      if (err) return console.log(err)
+      res.status(200).json(transaction)
+    })
   })
 }
