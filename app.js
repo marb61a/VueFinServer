@@ -20,3 +20,13 @@ app.use(function (req, res, next) {
 
 const mongoose = require('mongoose')
 mongoose.connect('')
+
+const db = mongoose.connection
+db.on('error', console.error.bind(console, 'connection error: '))
+db.once('open', function () {
+  console.log('Connected to MongoDB')
+
+  app.listen(app.get('port'), function () {
+    console.log('API server listening on Port ' + app.get('port'))
+  })
+})
